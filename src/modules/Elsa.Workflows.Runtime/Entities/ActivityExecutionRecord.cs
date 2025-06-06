@@ -57,7 +57,13 @@ public class ActivityExecutionRecord : Entity, ILogRecord
     /// <summary>
     /// Any properties provided by the activity.
     /// </summary>
-    public IDictionary<string, object> Properties { get; set; } = new Dictionary<string, object>();
+    public IDictionary<string, object>? Properties { get; set; }
+    
+    /// <summary>
+    /// Lightweight metadata associated with the activity execution.
+    /// This information will be retained as part of the activity execution summary record.
+    /// </summary>
+    public IDictionary<string, object>? Metadata { get; set; }
 
     /// <summary>
     /// Gets or sets the exception that occurred during the activity execution.
