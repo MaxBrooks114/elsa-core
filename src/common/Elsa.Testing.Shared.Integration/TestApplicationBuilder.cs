@@ -1,5 +1,6 @@
 using Elsa.Extensions;
 using Elsa.Features.Services;
+using Elsa.Scheduling;
 using Elsa.Workflows;
 using Elsa.Workflows.Activities;
 using FluentStorage;
@@ -100,8 +101,8 @@ public class TestApplicationBuilder
     }
     
     /// <summary>
-    /// Adds activities from the assembly containing the specified type.
-    /// </summary>
+        /// Adds activities from the assembly containing the specified type.
+        /// </summary>
     public TestApplicationBuilder AddActivitiesFrom<T>()
     {
         return ConfigureElsa(elsa => elsa.AddActivitiesFrom<T>());
