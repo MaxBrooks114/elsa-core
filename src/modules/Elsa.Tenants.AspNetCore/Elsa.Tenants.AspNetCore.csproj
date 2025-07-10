@@ -12,8 +12,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Elsa.Http\Elsa.Http.csproj" />
-        <ProjectReference Include="..\Elsa.Tenants\Elsa.Tenants.csproj" />
+        <ProjectReference Include="D:\repos\elsa-core-main\src\modules\Elsa.Http\Elsa.Http.csproj" />
+        <ProjectReference Include="D:\repos\elsa-core-main\src\modules\Elsa.Tenants\Elsa.Tenants.csproj" />
     </ItemGroup>
 
 </Project>

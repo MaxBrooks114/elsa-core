@@ -1,5 +1,4 @@
 using Elsa.Extensions;
-using Elsa.IO.Http.Features;
 using Elsa.ServerAndStudio.Web.Enums;
 using Elsa.ServerAndStudio.Web.Extensions;
 using Medallion.Threading.FileSystem;
@@ -66,8 +65,7 @@ services
                 };
             })
             .UseWorkflowsApi()
-            .UseCompression()
-            .Use<IOHttpFeature>()
+
             .AddActivitiesFrom<Program>()
             .AddWorkflowsFrom<Program>();
     });

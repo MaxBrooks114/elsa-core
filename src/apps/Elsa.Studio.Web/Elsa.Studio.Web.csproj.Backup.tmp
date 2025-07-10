@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <ItemGroup>
+        <ProjectReference Include="D:\repos\elsa-extensions-main\src\modulesStudioWebAssembly\ElsaStudioWebAssembly.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Elsa.Studio" />
+        <PackageReference Include="Elsa.Studio.Login.BlazorWasm" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="wwwroot\" />
+    </ItemGroup>
+
+</Project>

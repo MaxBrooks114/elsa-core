@@ -12,8 +12,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Elsa.Expressions\Elsa.Expressions.csproj" />
-      <ProjectReference Include="..\Elsa.Workflows.Management\Elsa.Workflows.Management.csproj" />
+      <ProjectReference Include="D:\repos\elsa-core-main\src\modules\Elsa.Expressions\Elsa.Expressions.csproj" />
+      <ProjectReference Include="D:\repos\elsa-core-main\src\modules\Elsa.Workflows.Management\Elsa.Workflows.Management.csproj" />
     </ItemGroup>
 
 </Project>

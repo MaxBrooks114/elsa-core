@@ -14,14 +14,14 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\modules\Elsa.Expressions.CSharp\Elsa.Expressions.CSharp.csproj" />
+        <ProjectReference Include="D:\repos\elsa-core-main\src\modules\Elsa.Expressions.CSharp\Elsa.Expressions.CSharp.csproj" />
 
-        <ProjectReference Include="..\..\modules\Elsa.Expressions.Liquid\Elsa.Expressions.Liquid.csproj" />
-        <ProjectReference Include="..\..\modules\Elsa.Scheduling\Elsa.Scheduling.csproj" />
+        <ProjectReference Include="D:\repos\elsa-core-main\src\modules\Elsa.Expressions.Liquid\Elsa.Expressions.Liquid.csproj" />
+        <ProjectReference Include="D:\repos\elsa-core-main\src\modules\Elsa.Scheduling\Elsa.Scheduling.csproj" />
 
-        <ProjectReference Include="..\..\modules\Elsa.WorkflowProviders.BlobStorage\Elsa.WorkflowProviders.BlobStorage.csproj" />
-        <ProjectReference Include="..\..\modules\Elsa\Elsa.csproj" />
-        <ProjectReference Include="..\Elsa.Testing.Shared\Elsa.Testing.Shared.csproj" />
+        <ProjectReference Include="D:\repos\elsa-core-main\src\modules\Elsa.WorkflowProviders.BlobStorage\Elsa.WorkflowProviders.BlobStorage.csproj" />
+        <ProjectReference Include="D:\repos\elsa-core-main\src\modules\Elsa\Elsa.csproj" />
+        <ProjectReference Include="D:\repos\elsa-core-main\src\common\Elsa.Testing.Shared\Elsa.Testing.Shared.csproj" />
     </ItemGroup>
 
 </Project>

@@ -23,8 +23,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Elsa.Common\Elsa.Common.csproj" />
-        <ProjectReference Include="..\Elsa.Expressions\Elsa.Expressions.csproj" />
+        <ProjectReference Include="D:\repos\elsa-core-main\src\modules\Elsa.Common\Elsa.Common.csproj" />
+        <ProjectReference Include="D:\repos\elsa-core-main\src\modules\Elsa.Expressions\Elsa.Expressions.csproj" />
     </ItemGroup>
 
 </Project>
