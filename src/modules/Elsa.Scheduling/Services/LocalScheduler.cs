@@ -52,19 +52,25 @@ public class LocalScheduler : IScheduler
         return ValueTask.CompletedTask;
     }
 
+
     private void RegisterScheduledTask(string name, IScheduledTask scheduledTask, IEnumerable<string>? keys = null)
     {
-        if (_scheduledTasks.TryGetValue(name, out var existingScheduledTask))
-        {
-            existingScheduledTask.Cancel();
-            _scheduledTaskKeys.Remove(existingScheduledTask, out _);
-        }
-
-        _scheduledTasks[name] = scheduledTask;
+        _scheduledTasks.AddOrUpdate(
+            name,
+            addValueFactory: _ => scheduledTask,
+            updateValueFactory: (_, existingScheduledTask) =>
+            {
+                existingScheduledTask.Cancel();
+                var removed = _scheduledTaskKeys.TryRemove(existingScheduledTask, out ICollection<string>? _);
+                if (!removed)
+                    System.Diagnostics.Debug.WriteLine($"[LocalScheduler] Warning: Tried to remove scheduled task keys for an existing scheduled task, but it was not present in _scheduledTaskKeys.");
+                return scheduledTask;
+            });
 
         if (keys != null)
             _scheduledTaskKeys[scheduledTask] = keys.ToList();
     }
+ 
 
     private void RemoveScheduledTask(string name)
     {
@@ -84,7 +90,15 @@ public class LocalScheduler : IScheduler
 
             foreach (var scheduledTask in scheduledTasks)
             {
-                _scheduledTasks.RemoveWhere(x => x.Value == scheduledTask);
+                // Collect all keys in _scheduledTasks that map to this scheduledTask
+                var matchingTaskKeys = _scheduledTasks.Where(x => x.Value == scheduledTask).Select(x => x.Key).ToList();
+                foreach (var taskKey in matchingTaskKeys)
+                {
+                    var removed = _scheduledTasks.TryRemove(taskKey, out _);
+                    if (!removed)
+                        System.Diagnostics.Debug.WriteLine($"[LocalScheduler] Warning: Failed to remove scheduled task with key '{taskKey}' for '{key}' from _scheduledTasks.");
+                }
+
                 _scheduledTaskKeys.Remove(scheduledTask, out _);
                 scheduledTask.Cancel();
             }
